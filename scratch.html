@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason's Hiking Page</title>
+    <!-- Linking my custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- On-page anchor target so the Back to Top button works -->
+    <a id="top"></a>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Hiking in Zion National Park</h1>
+        <p>Exploring Utah's red rock canyons — one trail at a time</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <a href="#about">About Zion</a>
+        <a href="#trails">Top Trails</a>
+        <a href="#tips">Tips</a>
+        <a href="#video">Video</a>
+        <a href="#data">Trail Data</a>
+        <a href="app.html">Sports Trivia Game</a>
+        <a href="index.html">My Professional Site</a>
+    </div>
+
+    <!-- Main body content -->
+    <div class="mainbody">
+
+        <!-- About Section -->
+        <div class="section" id="about">
+            <h2>Why Zion?</h2>
+            <p>
+                Nestled in the southwest corner of Utah, Zion National Park is one of the most
+                incredible landscapes I have ever seen. Towering sandstone cliffs, slot canyons
+                carved by the Virgin River, and trails that range from easy walks to heart-pounding
+                ridge scrambles — Zion has something for everyone.
+            </p>
+            <p>
+                I first visited Zion and immediately fell in love with it. The combination of
+                physical challenge, stunning scenery, and the quiet you only find deep in a canyon
+                makes it my favorite place to hike every year.
+            </p>
+
+            <!-- Image of Zion - requirement: image not from Bootstrap -->
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Angel%27s_Landing_2006.jpg/1280px-Angel%27s_Landing_2006.jpg"
+                alt="Angels Landing in Zion National Park"
+                class="trailimage">
+            <p class="caption">Angels Landing — one of the most iconic hikes in the American West</p>
+
+            <div class="highlight">
+                "The canyon walls glow red and orange at sunrise, and the river sings below your feet
+                on the Narrows. Every visit feels like the first time."
+            </div>
+        </div>
+
+        <!-- Top Trails Section -->
+        <div class="section" id="trails">
+            <h2>My Top Zion Trails</h2>
+            <p>Here are my favorite hikes ranked from hardest to easiest, with details about each one:</p>
+
+            <!--
+                REQUIREMENT: Ordered list with unordered lists embedded inside.
+                The <ol> ranks the trails 1-5.
+                Each trail has a <ul> inside with bullet point details.
+            -->
+            <ol>
+                <li>Angels Landing (5.4 miles - Hard)
+                    <ul>
+                        <li>Elevation gain: 1,488 feet</li>
+                        <li>Famous for the chain-assisted scramble at the top</li>
+                        <li>Requires a permit — apply through recreation.gov</li>
+                        <li>Best time to go: early morning before it gets crowded</li>
+                    </ul>
+                </li>
+
+                <li>The Narrows — Top Down (16 miles - Strenuous)
+                    <ul>
+                        <li>You hike inside the Virgin River the whole way</li>
+                        <li>Requires a permit and shuttle reservation</li>
+                        <li>Rent a drysuit and neoprene socks — the water is freezing</li>
+                        <li>One of the most unique hikes in the entire world</li>
+                    </ul>
+                </li>
+
+                <li>Observation Point (8 miles - Hard)
+                    <ul>
+                        <li>Elevation gain: 2,148 feet</li>
+                        <li>The view from the top looks DOWN onto Angels Landing</li>
+                        <li>Way fewer crowds than Angels Landing</li>
+                    </ul>
+                </li>
+
+                <li>Canyon Overlook Trail (1 mile - Easy)
+                    <ul>
+                        <li>Perfect for beginners or families</li>
+                        <li>Short but has amazing views of the canyon entrance</li>
+                        <li>No permit needed</li>
+                    </ul>
+                </li>
+
+                <li>Emerald Pools (1.2 to 3 miles - Easy to Moderate)
+                    <ul>
+                        <li>Three pools connected by a trail system</li>
+                        <li>Waterfalls in the spring are incredible</li>
+                        <li>Great option right when you arrive at the park</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="section" id="tips">
+            <h2>Hiking Tips</h2>
+            <p>Good preparation makes all the difference. Here is what I have learned from hiking Zion:</p>
+
+            <div class="tipsgrid">
+                <div class="tipcard">
+                    <h3>Stay Hydrated</h3>
+                    <p>Bring at least 3 liters of water per person on hot days. Dehydration sneaks up fast in the desert heat.</p>
+                </div>
+                <div class="tipcard">
+                    <h3>Good Footwear</h3>
+                    <p>Wear waterproof hiking boots with ankle support. Sticky rubber soles help a lot on slickrock.</p>
+                </div>
+                <div class="tipcard">
+                    <h3>Start Early</h3>
+                    <p>Hit the trailhead by 6 or 7 AM in summer. Crowds and temperatures both spike by 10 AM.</p>
+                </div>
+                <div class="tipcard">
+                    <h3>Download Maps</h3>
+                    <p>Cell signal is spotty in the canyon. Download offline maps on AllTrails before you go.</p>
+                </div>
+                <div class="tipcard">
+                    <h3>Get Permits Early</h3>
+                    <p>Angels Landing requires a permit. Apply through recreation.gov — the lottery fills up months in advance.</p>
+                </div>
+                <div class="tipcard">
+                    <h3>Pack the Essentials</h3>
+                    <p>Navigation, headlamp, sun protection, first aid kit, food, water, and extra layers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="section" id="video">
+            <h2>Watch: Hiking the Narrows</h2>
+            <p>
+                This video shows what it is actually like to hike through the Virgin River slot canyon.
+                It is one of the most unique experiences I have ever had.
+            </p>
+
+            <!--
+                REQUIREMENT: Embedded YouTube video
+                To embed a YouTube video you use an iframe tag.
+                Take the normal YouTube link: https://www.youtube.com/watch?v=r3pSdVtMDmQ
+                Change "watch?v=" to "embed/" to get the embed version.
+                NOTE: This will not show up when you open the file locally on your computer.
+                It WILL work once the site is hosted on GitHub Pages. This is expected and normal.
+            -->
+            <div class="videowrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/r3pSdVtMDmQ"
+                    title="Hiking The Narrows in Zion National Park"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Second image -->
+            <img
+                src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?w=1280&q=80"
+                alt="The Narrows slot canyon in Zion National Park"
+                class="trailimage">
+            <p class="caption">The Narrows — hiking inside a 1,000 foot tall slot canyon</p>
+        </div>
+
+        <!-- Tableau Section -->
+        <div class="section" id="data">
+            <h2>National Park Visitation Data</h2>
+            <p>
+                Zion is one of the most visited national parks in the US.
+                The interactive chart below shows visitation trends across US National Parks.
+                You can click and explore the data yourself.
+            </p>
+
+            <!--
+                REQUIREMENT: Live and interactive Tableau embed
+                Tableau embed code from public.tableau.com
+                Visualization: US National Parks Visitation Trends by Kinsey Miller
+            -->
+            <div class="tableaubox">
+                <div class='tableauPlaceholder' id='viz1' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Dashboard' src='https://public.tableau.com/static/images/US/USNationalParksVisitationTrends/Dashboard/1_rss.png' style='border: none'>
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'>
+                        <param name='embed_code_version' value='3'>
+                        <param name='site_root' value=''>
+                        <param name='name' value='USNationalParksVisitationTrends/Dashboard'>
+                        <param name='tabs' value='no'>
+                        <param name='toolbar' value='yes'>
+                        <param name='animate_transition' value='yes'>
+                        <param name='display_static_image' value='yes'>
+                        <param name='display_spinner' value='yes'>
+                        <param name='display_overlay' value='yes'>
+                        <param name='display_count' value='yes'>
+                        <param name='language' value='en-US'>
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width = '100%';
+                    vizElement.style.height = '600px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+        </div>
+
+        <!-- Back to top link - REQUIREMENT: on-page anchor link -->
+        <div class="backtotop">
+            <a href="#top">Back to Top</a>
+        </div>
+
+    </div>
+    <!-- end mainbody -->
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Mason Roll &nbsp;|&nbsp;
+        <a href="index.html">Professional Site</a> &nbsp;|&nbsp;
+        <a href="app.html">Sports Trivia Game</a>
+    </div>
+
+</body>
+</html>

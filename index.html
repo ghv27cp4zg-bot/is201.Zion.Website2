@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mason Roll | Business Management</title>
+
+  <!-- Bootstrap 5 CSS from CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c9a84c;
+      --light-bg: #f7f5f0;
+      --text: #2d2d2d;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      background-color: #fff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      background-color: var(--navy) !important;
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold) !important;
+      letter-spacing: 0.03em;
+    }
+    .nav-link {
+      color: rgba(255,255,255,0.85) !important;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .nav-link:hover {
+      color: var(--gold) !important;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2c4a8a 100%);
+      color: white;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 60px;
+      background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+    }
+    .hero .subtitle {
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .hero-avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      background: linear-gradient(135deg, #c9a84c33, #2c4a8a55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--gold);
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-size: 2rem;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── About ── */
+    #about {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .about-card {
+      background: var(--light-bg);
+      border-radius: 16px;
+      padding: 2rem;
+      border-left: 5px solid var(--gold);
+    }
+
+    /* ── Resume ── */
+    #resume {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+    .resume-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      height: 100%;
+    }
+    .resume-card h3 {
+      color: var(--navy);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .resume-card h3 i {
+      color: var(--gold);
+    }
+    .resume-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    .resume-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .resume-item h5 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .resume-item .org {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .resume-item .date {
+      color: #888;
+      font-size: 0.88rem;
+    }
+    .resume-item p {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .skill-badge {
+      background: var(--navy);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 4px;
+    }
+    .award-badge {
+      background: linear-gradient(135deg, var(--gold), #e8c96b);
+      color: var(--navy);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-block;
+      margin: 4px;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      padding: 80px 0;
+      background: var(--navy);
+      color: white;
+    }
+    #contact .section-title {
+      color: white;
+      border-color: var(--gold);
+    }
+    .contact-icon {
+      color: var(--gold);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* ── Smooth scroll ── */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════ NAVBAR ════════════════════ -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">Mason Roll</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Résumé</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero text-center" id="hero">
+    <div class="container">
+      <div class="hero-avatar mx-auto">
+        <i class="bi bi-person-fill"></i>
+      </div>
+      <p class="subtitle mb-2">Business Management · BYU · Class of 2031</p>
+      <h1 class="fw-bold">Mason Roll</h1>
+      <p class="lead mt-3 mx-auto" style="max-width:560px; opacity:0.88;">
+        Sophomore at Brigham Young University passionate about business, data analytics, and the great outdoors.
+      </p>
+      <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#resume" class="btn btn-warning fw-bold px-4 py-2">View Résumé</a>
+        <a href="#contact" class="btn btn-outline-light fw-bold px-4 py-2">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ ABOUT ════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <div class="about-card">
+            <p class="fs-5 mb-3">
+              I'm a sophomore at <strong>Brigham Young University</strong> studying <strong>Business Management</strong>.
+              I bring a strong analytical mindset, honed through data analytics coursework and hands-on work experience,
+              alongside a drive to lead and communicate effectively.
+            </p>
+            <p class="mb-0">
+              Outside the classroom, you'll find me exploring Utah's incredible trail systems — from the slot canyons of
+              Zion to the high ridges of the Wasatch. I believe the discipline learned on a long trail translates
+              directly to business: plan well, push through hard stretches, and enjoy the view at the top.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="row g-3 text-center">
+            <div class="col-6">
+              <div class="resume-card p-3">
+                <i class="bi bi-mortarboard-fill fs-2 text-warning d-block mb-2"></i>
+                <strong>BYU Scholar</strong>
+                <p class="small text-muted mb-0">Full scholarship recipient</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="resume-card p-3">
+                <i class="bi bi-star-fill fs-2 text-warning d-block mb-2"></i>
+                <strong>4.0 GPA</strong>
+                <p class="small text-muted mb-0">Unweighted high school GPA</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="resume-card p-3">
+                <i class="bi bi-music-note-beamed fs-2 text-warning d-block mb-2"></i>
+                <strong>Drum Major</strong>
+                <p class="small text-muted mb-0">3rd place marching band</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="resume-card p-3">
+                <i class="bi bi-bar-chart-fill fs-2 text-warning d-block mb-2"></i>
+                <strong>Data Analytics</strong>
+                <p class="small text-muted mb-0">Excel · Tableau · Analysis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ RÉSUMÉ ════════════════════ -->
+  <section id="resume">
+    <div class="container">
+      <h2 class="section-title">Résumé</h2>
+      <div class="row g-4">
+
+        <!-- Education -->
+        <div class="col-lg-6">
+          <div class="resume-card">
+            <h3><i class="bi bi-mortarboard-fill"></i> Education</h3>
+            <div class="resume-item">
+              <h5>B.S. Business Management</h5>
+              <div class="org">Brigham Young University</div>
+              <div class="date">2025 – Present (Expected 2031)</div>
+              <p>Sophomore studying Business Management with a focus on data analytics and organizational leadership. BYU Scholarship recipient.</p>
+            </div>
+            <div class="resume-item">
+              <h5>High School Diploma</h5>
+              <div class="org">Spring Lake High School</div>
+              <div class="date">2021 – 2025</div>
+              <p>Graduated with a 4.0 unweighted GPA. Drum Major of the marching band, leading the ensemble to a <strong>3rd place</strong> finish at state competition.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="col-lg-6">
+          <div class="resume-card">
+            <h3><i class="bi bi-briefcase-fill"></i> Work Experience</h3>
+            <div class="resume-item">
+              <h5>Golf Course Staff</h5>
+              <div class="org">Spring Lake Country Club</div>
+              <div class="date">2024 – Present</div>
+              <p>Provided exceptional customer service to club members and guests. Managed course operations including equipment handling, course maintenance coordination, and front-desk responsibilities. Developed strong interpersonal and time-management skills in a fast-paced environment.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="col-lg-6">
+          <div class="resume-card">
+            <h3><i class="bi bi-tools"></i> Skills</h3>
+            <p class="text-muted small mb-3">Technical &amp; professional competencies</p>
+            <div>
+              <span class="skill-badge"><i class="bi bi-file-earmark-excel me-1"></i>Microsoft Excel</span>
+              <span class="skill-badge"><i class="bi bi-graph-up me-1"></i>Data Analytics</span>
+              <span class="skill-badge"><i class="bi bi-bar-chart me-1"></i>Tableau</span>
+              <span class="skill-badge"><i class="bi bi-people me-1"></i>Leadership</span>
+              <span class="skill-badge"><i class="bi bi-chat-dots me-1"></i>Customer Service</span>
+              <span class="skill-badge"><i class="bi bi-clock me-1"></i>Time Management</span>
+              <span class="skill-badge"><i class="bi bi-kanban me-1"></i>Project Management</span>
+              <span class="skill-badge"><i class="bi bi-mic me-1"></i>Public Speaking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards & Honors -->
+        <div class="col-lg-6">
+          <div class="resume-card">
+            <h3><i class="bi bi-trophy-fill"></i> Awards &amp; Honors</h3>
+            <div class="resume-item">
+              <h5>BYU Academic Scholarship</h5>
+              <div class="org">Brigham Young University</div>
+              <div class="date">2025 – Present</div>
+              <p>Merit-based scholarship awarded for outstanding academic achievement entering BYU.</p>
+            </div>
+            <div class="resume-item">
+              <h5>4.0 Unweighted GPA</h5>
+              <div class="org">Spring Lake High School — All 4 Years</div>
+              <div class="date">2021 – 2025</div>
+              <p>Maintained a perfect unweighted GPA throughout all four years of high school while balancing extracurricular leadership.</p>
+            </div>
+            <div class="resume-item">
+              <h5>3rd Place — State Marching Band</h5>
+              <div class="org">Drum Major, Spring Lake High School Marching Band</div>
+              <div class="date">2021 – 2025</div>
+              <p>Led the marching band as Drum Major to a 3rd place finish at the state competition.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ CONTACT ════════════════════ -->
+  <section id="contact">
+    <div class="container text-center">
+      <h2 class="section-title">Contact</h2>
+      <p class="lead mb-5" style="opacity:0.8;">Feel free to reach out — always happy to connect.</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-3">
+          <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div class="fw-bold">Email</div>
+          <div style="opacity:0.7; font-size:0.9rem;">mroll073@byu.edu</div>
+        </div>
+        <div class="col-md-3">
+          <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div class="fw-bold">Phone</div>
+          <div style="opacity:0.7; font-size:0.9rem;">123-456-7890</div>
+        </div>
+        <div class="col-md-3">
+          <div class="contact-icon"><i class="bi bi-linkedin"></i></div>
+          <div class="fw-bold">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/mason-roll-32409038b" target="_blank" style="color:var(--gold); font-size:0.9rem;">linkedin.com/in/mason-roll</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer>
+    <p class="mb-0">&copy; 2025 Mason Roll · Built for IS 201 at BYU</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
